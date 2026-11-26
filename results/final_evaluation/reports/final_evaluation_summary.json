@@ -1,0 +1,189 @@
+{
+    "project": "TrafficGuard AI",
+    "phase": "7-8",
+    "status": "Independent dataset evaluation completed",
+    "training_performed": false,
+    "dataset_test_counts": {
+        "helmet": 154,
+        "seatbelt": 781
+    },
+    "configuration_sha256": "f9323dd1a02a0d876e18b1f2bfc5533c43928d43ebbc3618e9d3926c507addf9",
+    "selected_configuration": {
+        "project": "TrafficGuard AI",
+        "phase": "7-8",
+        "thresholds_selected_on": "validation",
+        "models": {
+            "helmet": {
+                "architecture": "YOLOv8m",
+                "model_sha256": "78c58bad085dc5bf5a9387968616c91869c63ec00118ccc9517c3d5ab75667ec",
+                "image_size": 640,
+                "confidence": 0.3,
+                "nms_iou": 0.7,
+                "matching_iou": 0.5,
+                "max_det": 300,
+                "precision_mode": "FP32",
+                "selection_split": "validation",
+                "validation_metrics": {
+                    "Precision": 0.7360766961651917,
+                    "Recall": 0.7707502374169041,
+                    "Macro F1": 0.7506699555393141,
+                    "Violation Precision": 0.7066666666666667,
+                    "Violation Recall": 0.654320987654321,
+                    "Violation F1": 0.6794871794871794
+                }
+            },
+            "seatbelt": {
+                "architecture": "YOLOv8s",
+                "model_sha256": "fde425e659b82fd5cc19cc070c07251f2de2db2aa7d5cdce8f45f49766def760",
+                "image_size": 640,
+                "confidence": 0.35,
+                "nms_iou": 0.7,
+                "matching_iou": 0.5,
+                "max_det": 300,
+                "precision_mode": "FP32",
+                "selection_split": "validation",
+                "validation_metrics": {
+                    "Precision": 0.9152250997865032,
+                    "Recall": 0.8956998223801066,
+                    "Macro F1": 0.9051645110052189,
+                    "Violation Precision": 0.911578947368421,
+                    "Violation Recall": 0.866,
+                    "Violation F1": 0.8882051282051282
+                }
+            }
+        }
+    },
+    "standard_test_metrics": [
+        {
+            "Task": "helmet",
+            "Model": "YOLOv8m",
+            "Test Images": 154,
+            "Precision": 0.64375385,
+            "Recall": 0.7112719089,
+            "Macro F1": 0.6741507794,
+            "mAP50": 0.7222016673,
+            "mAP50-95": 0.3816928343,
+            "Violation Precision": 0.6219556597,
+            "Violation Recall": 0.6164383562,
+            "Violation F1": 0.6191847176,
+            "Violation AP50": 0.6762797539,
+            "Inference ms": 29.9399814351
+        },
+        {
+            "Task": "seatbelt",
+            "Model": "YOLOv8s",
+            "Test Images": 781,
+            "Precision": 0.9136793144,
+            "Recall": 0.8860453887,
+            "Macro F1": 0.8993897341,
+            "mAP50": 0.9292576469,
+            "mAP50-95": 0.6015834813,
+            "Violation Precision": 0.9067619531,
+            "Violation Recall": 0.8491900991,
+            "Violation F1": 0.8770322309,
+            "Violation AP50": 0.9054983284,
+            "Inference ms": 14.6345759014
+        }
+    ],
+    "fixed_threshold_test_metrics": [
+        {
+            "Task": "helmet",
+            "Model": "YOLOv8m",
+            "Confidence": 0.3,
+            "Test Images": 154,
+            "Precision": 0.640625,
+            "Recall": 0.7069533553,
+            "Macro F1": 0.6703448276,
+            "Violation Precision": 0.625,
+            "Violation Recall": 0.6164383562,
+            "Violation F1": 0.6206896552
+        },
+        {
+            "Task": "seatbelt",
+            "Model": "YOLOv8s",
+            "Confidence": 0.35,
+            "Test Images": 781,
+            "Precision": 0.9000133236,
+            "Recall": 0.893238244,
+            "Macro F1": 0.8964149901,
+            "Violation Precision": 0.8876889849,
+            "Violation Recall": 0.8544698545,
+            "Violation F1": 0.8707627119
+        }
+    ],
+    "class_wise_test_metrics": [
+        {
+            "Task": "helmet",
+            "Class ID": 0,
+            "Class": "with_helmet",
+            "Precision": 0.6655520402,
+            "Recall": 0.8061054616,
+            "F1": 0.7291168413,
+            "AP50": 0.7681235808,
+            "AP50-95": 0.4568464222
+        },
+        {
+            "Task": "helmet",
+            "Class ID": 1,
+            "Class": "without_helmet",
+            "Precision": 0.6219556597,
+            "Recall": 0.6164383562,
+            "F1": 0.6191847176,
+            "AP50": 0.6762797539,
+            "AP50-95": 0.3065392464
+        },
+        {
+            "Task": "seatbelt",
+            "Class ID": 0,
+            "Class": "with_seatbelt",
+            "Precision": 0.9205966757,
+            "Recall": 0.9229006784,
+            "F1": 0.9217472373,
+            "AP50": 0.9530169654,
+            "AP50-95": 0.628626064
+        },
+        {
+            "Task": "seatbelt",
+            "Class ID": 1,
+            "Class": "without_seatbelt",
+            "Precision": 0.9067619531,
+            "Recall": 0.8491900991,
+            "F1": 0.8770322309,
+            "AP50": 0.9054983284,
+            "AP50-95": 0.5745408986
+        }
+    ],
+    "speed_benchmark": [
+        {
+            "Task": "helmet",
+            "Model": "YOLOv8m",
+            "Device": "Tesla T4",
+            "Images": 50,
+            "Mean Latency ms": 33.39782022,
+            "Median Latency ms": 33.334632,
+            "P95 Latency ms": 40.5708011,
+            "Estimated Sequential FPS": 29.9420738663,
+            "Model Size MB": 49.5978565216
+        },
+        {
+            "Task": "seatbelt",
+            "Model": "YOLOv8s",
+            "Device": "Tesla T4",
+            "Images": 50,
+            "Mean Latency ms": 19.39913162,
+            "Median Latency ms": 19.402262,
+            "P95 Latency ms": 20.24688385,
+            "Estimated Sequential FPS": 51.548699168,
+            "Model Size MB": 21.477273941
+        }
+    ],
+    "limitations": [
+        "Test splits were held out from model selection.",
+        "Complete source-level independence is not guaranteed.",
+        "Helmet annotations also include cyclists and some non-riders.",
+        "Helmet status alone does not establish a motorcycle violation.",
+        "Windshield reflections and visibility affect seatbelt detection.",
+        "External traffic testing remains pending.",
+        "GPU benchmark speed does not establish CPU performance."
+    ]
+}

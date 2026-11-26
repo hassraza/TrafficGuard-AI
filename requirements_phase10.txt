@@ -1,0 +1,5 @@
+ultralytics==8.4.218
+streamlit>=1.42,<2
+pandas
+numpy
+opencv-python

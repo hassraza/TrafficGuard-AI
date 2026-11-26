@@ -1,0 +1,45 @@
+{
+    "project": "TrafficGuard AI",
+    "phase": "7-8",
+    "thresholds_selected_on": "validation",
+    "models": {
+        "helmet": {
+            "architecture": "YOLOv8m",
+            "model_sha256": "78c58bad085dc5bf5a9387968616c91869c63ec00118ccc9517c3d5ab75667ec",
+            "image_size": 640,
+            "confidence": 0.3,
+            "nms_iou": 0.7,
+            "matching_iou": 0.5,
+            "max_det": 300,
+            "precision_mode": "FP32",
+            "selection_split": "validation",
+            "validation_metrics": {
+                "Precision": 0.7360766961651917,
+                "Recall": 0.7707502374169041,
+                "Macro F1": 0.7506699555393141,
+                "Violation Precision": 0.7066666666666667,
+                "Violation Recall": 0.654320987654321,
+                "Violation F1": 0.6794871794871794
+            }
+        },
+        "seatbelt": {
+            "architecture": "YOLOv8s",
+            "model_sha256": "fde425e659b82fd5cc19cc070c07251f2de2db2aa7d5cdce8f45f49766def760",
+            "image_size": 640,
+            "confidence": 0.35,
+            "nms_iou": 0.7,
+            "matching_iou": 0.5,
+            "max_det": 300,
+            "precision_mode": "FP32",
+            "selection_split": "validation",
+            "validation_metrics": {
+                "Precision": 0.9152250997865032,
+                "Recall": 0.8956998223801066,
+                "Macro F1": 0.9051645110052189,
+                "Violation Precision": 0.911578947368421,
+                "Violation Recall": 0.866,
+                "Violation F1": 0.8882051282051282
+            }
+        }
+    }
+}

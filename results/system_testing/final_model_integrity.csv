@@ -1,0 +1,4 @@
+Model,Architecture,Confidence,Size MB,Integrity Verified
+helmet,YOLOv8m,0.3,49.6,True
+seatbelt,YOLOv8s,0.35,21.48,True
+context,YOLOv8n,0.25,6.25,True

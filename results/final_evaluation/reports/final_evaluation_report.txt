@@ -1,0 +1,62 @@
+TRAFFICGUARD AI
+PHASE 7-8 - FINAL MODEL EVALUATION
+=================================================================
+
+SELECTED MODELS
+
+Helmet: YOLOv8m, Helmet v3
+Seatbelt: YOLOv8s, Seatbelt v1
+
+CONFIDENCE OPTIMIZATION
+
+    Task  Confidence  Precision  Recall  Macro F1  Violation Precision  Violation Recall  Violation F1
+  helmet        0.30   0.736077 0.77075  0.750670             0.706667          0.654321      0.679487
+seatbelt        0.35   0.915225 0.89570  0.905165             0.911579          0.866000      0.888205
+
+STANDARD INDEPENDENT TEST RESULTS
+
+    Task   Model  Test Images  Precision  Recall  Macro F1  mAP50  mAP50-95  Violation Precision  Violation Recall  Violation F1  Violation AP50  Inference ms
+  helmet YOLOv8m          154     0.6438  0.7113    0.6742 0.7222    0.3817               0.6220            0.6164        0.6192          0.6763       29.9400
+seatbelt YOLOv8s          781     0.9137  0.8860    0.8994 0.9293    0.6016               0.9068            0.8492        0.8770          0.9055       14.6346
+
+CLASS-WISE TEST RESULTS
+
+    Task  Class ID            Class  Precision  Recall     F1   AP50  AP50-95
+  helmet         0      with_helmet     0.6656  0.8061 0.7291 0.7681   0.4568
+  helmet         1   without_helmet     0.6220  0.6164 0.6192 0.6763   0.3065
+seatbelt         0    with_seatbelt     0.9206  0.9229 0.9217 0.9530   0.6286
+seatbelt         1 without_seatbelt     0.9068  0.8492 0.8770 0.9055   0.5745
+
+FIXED-THRESHOLD DEPLOYMENT RESULTS
+
+    Task   Model  Confidence  Test Images  Precision  Recall  Macro F1  Violation Precision  Violation Recall  Violation F1
+  helmet YOLOv8m        0.30          154     0.6406  0.7070    0.6703               0.6250            0.6164        0.6207
+seatbelt YOLOv8s        0.35          781     0.9000  0.8932    0.8964               0.8877            0.8545        0.8708
+
+VALIDATION VS TEST COMPARISON
+
+    Task      Split  Precision  Recall  Macro F1  mAP50  mAP50-95  Violation F1
+  helmet Validation     0.7693  0.7517    0.7569 0.7835    0.4259        0.6859
+seatbelt Validation     0.9395  0.8849    0.9109 0.9473    0.6200        0.8925
+  helmet       Test     0.6438  0.7113    0.6742 0.7222    0.3817        0.6192
+seatbelt       Test     0.9137  0.8860    0.8994 0.9293    0.6016        0.8770
+
+INFERENCE SPEED
+
+    Task   Model   Device  Images  Mean Latency ms  Median Latency ms  P95 Latency ms  Estimated Sequential FPS  Model Size MB
+  helmet YOLOv8m Tesla T4      50          33.3978            33.3346         40.5708                   29.9421        49.5979
+seatbelt YOLOv8s Tesla T4      50          19.3991            19.4023         20.2469                   51.5487        21.4773
+
+LIMITATIONS
+
+Test splits were held out from model selection.
+Complete source-level independence is not guaranteed.
+Helmet annotations also include cyclists and some non-riders.
+Helmet status alone does not establish a motorcycle violation.
+Windshield reflections and visibility affect seatbelt detection.
+External traffic testing remains pending.
+GPU benchmark speed does not establish CPU performance.
+
+NEXT PHASE
+
+Combined inference pipeline development.

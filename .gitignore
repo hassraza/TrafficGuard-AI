@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+secrets.toml
+.streamlit/secrets.toml
+kaggle.json
+credentials.json
+*.pem
+*.key
+
+# Datasets
+datasets/raw/
+datasets/processed/
+datasets/external_testing/
+
+# Generated files
+runs/
+outputs/
+uploads/
+temp/
+tmp/
+*.cache
+*.log
+*.zip
+
+# Large media
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Ignore intermediate model checkpoints
+*.pt
+
+# Retain final application models
+!models/helmet/helmet_best.pt
+!models/seatbelt/seatbelt_best.pt
+!models/context/vehicle_context_yolov8n.pt
+
+# Editors
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
