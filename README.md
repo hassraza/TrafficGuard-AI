@@ -6,6 +6,16 @@ TrafficGuard AI is a computer vision project developed to identify helmet and se
 
 This project is an academic prototype and is not intended for automatic traffic enforcement.
 
+## Live Demonstration
+
+TrafficGuard AI is deployed on Streamlit Community Cloud.
+
+[Open TrafficGuard AI](https://traffficguard-ai.streamlit.app/)
+
+The application supports helmet detection, seatbelt detection,
+combined inference, image and video processing, CSV-based
+batch detection and model performance visualization.
+
 ## Features
 - Helmet detection
 - Seatbelt detection
